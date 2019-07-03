@@ -22,9 +22,9 @@ int parseInt(string s) {
 }
 
 int main() {
-  string timeStr = "01:20";
+  string timeStr = "";
   vector<psi> times;
-	vector<pps> timesOrder;
+  vector<pps> timesOrder;
 
   int n, h, m, sum = 0;
   dash;
@@ -60,7 +60,7 @@ int main() {
 
   int newServer = avg - times[0].s;
   int newH = (times[0].s + newServer) / 60;
-  int newM = (times[0].s + newServer) % 60;
+  int newM = (times[0].s + newServer) % 60; 
   
   cout << "\n\n";
   dash;
@@ -70,9 +70,9 @@ int main() {
        << " Min. " << times[0].f << " --> " << noshowpos << setw(2) << newH << ':' << setw(2) << newM << '\n';
   dash;
 
-	for(size_t i = 1; i < times.size(); i++) {
+  for(size_t i = 1; i < times.size(); i++) {
     int adjust = avg - times[i].s;
-		timesOrder.pb({{ adjust, i }, times[i].f});
+    timesOrder.pb({{ adjust, i }, times[i].f});
   }
 	
 	cout << "\nClients ordered...\n";
