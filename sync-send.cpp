@@ -94,7 +94,8 @@ int main() {
 
   sort(timesOrder.begin(), timesOrder.end());
   for(auto it: timesOrder) {
-    cout << "Set Client " << it.f.s << " send message " 
+    cout << "Client " << it.f.s << " be at " << timeSync[it.f.s].f 
+         << " send at " << timeSend[it.f.s - 1].f << " message " 
          << setw(2) << it.f.f << " Min. after\n";
     dash;
   }
